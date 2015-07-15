@@ -48,28 +48,22 @@
     // Set these 3 variables to their DOM elements
 
     var myImage = document.getElementById("coffee_image");
-        console.log(myImage);
     var myRevenueMessage = document.getElementById("revenue");
-        console.log(myRevenueMessage);
-
-    // function makeCoffee() {
-    //     myImage.setAttribute('src', 'static/coffee_mug.jpg');
-    // }  
 
     myImage.setAttribute('src', 'static/coffee_beans.jpg');
 
-    function makeCoffee(evt) {
-        myImage.setAttribute('src', 'static/coffee_machine.jpg');
-        console.dir(evt);
-    }    
+    // function makeCoffee(evt) {
+    //     myImage.setAttribute('src', 'static/coffee_machine.jpg');
+    // }    
 
-    function coffeeBeansPic(){
-        myImage.setAttribute('src', 'static/coffee_beans.jpg');
-    } 
+    // function coffeeBeansPic(){
+    //     myImage.setAttribute('src', 'static/coffee_beans.jpg');
+    // } 
 
-    function delayedCoffee(){
-        makeCoffee();
-        setTimeout(coffeeBeansPic, 500);
+    function delayedCoffee() {
+        myImage.src = "static/coffee_machine.jpg";
+        setTimeout(function() { myImage.setAttribute('src', 'static/coffee_mug.jpg'); }, 500);
+        setTimeout(function() { myImage.setAttribute('src', 'static/coffee_beans.jpg'); }, 1500);
     }
     
     myImage.addEventListener('click', delayedCoffee);
