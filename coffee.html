@@ -65,10 +65,14 @@
 
     function coffeeBeansPic(){
         myImage.setAttribute('src', 'static/coffee_beans.jpg');
+    } 
+
+    function delayedCoffee(){
+        makeCoffee();
+        setTimeout(coffeeBeansPic, 500);
     }
-
-    myImage.addEventListener('click', makeCoffee, setTimeout(coffeeBeansPic, 500));
-
+    
+    myImage.addEventListener('click', delayedCoffee);
 
     // use this dictionary in further study step
 
